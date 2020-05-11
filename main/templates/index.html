@@ -1,0 +1,39 @@
+<h1>Posts</h1>
+
+{% if messages %}
+<div style="border: 1px solid #ccc;">
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>[{{message.tags}}] {{ message }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% for post in posts %}
+    <ul>
+        <li>{{post}} <a href="/post/{{post.id}}/clone/">[CLONE]</a> <a href="/post/{{post.id}}/delete/">[DELETE]</a></li>
+        <li>
+            <div>comments:</div>
+            <ul>
+                {% for comment in post.comment_set.all %}
+                    <li>{{ comment }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>
+            <div>post comments:</div>
+            <ul>
+                {% for post_comment in post.post_comments.all %}
+                    <div>{{post_comment}}:</div>
+                    <ul>
+                        {% for comment in post_comment.comments.all %}
+                            <li>{{comment}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+    <hr />
+{% endfor %}

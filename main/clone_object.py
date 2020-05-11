@@ -5,7 +5,7 @@ def clone_object(obj, attrs={}):
     clone = obj._meta.model.objects.get(id=obj.id)
     clone.id = None
 
-    # if caller specified some attributes to be overridden, use the
+    # if caller specified some attributes to be overridden, use them
     for key, value in attrs.items():
         setattr(clone, key, value)
 

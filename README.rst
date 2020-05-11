@@ -20,7 +20,7 @@ Strategy
 Implementation
 --------------
 
-See `./main/clone_object.py`_
+See `clone_object.py <./main/clone_object.py>`_
 
 Example 1
 ---------

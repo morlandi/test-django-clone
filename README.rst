@@ -2,6 +2,9 @@
 
 Solving "Django clone the recursive objects" (https://stackoverflow.com/questions/61584535/django-clone-the-recursive-objects)
 
+Tested with: Python 3.7.6 / Django 3.0.6
+
+
 Post objects can be cloned as follows:
 
 .. code:: python
